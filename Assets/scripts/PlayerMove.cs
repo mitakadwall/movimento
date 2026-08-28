@@ -15,6 +15,24 @@ public class PlayerMove : MonoBehaviour
         direction = Vector3.ClampMagnitude(direction, 1f);
 
         rb.linearVelocity = new Vector3(direction.x * speed, rb.linearVelocity.y, direction.z * speed);
+
+        if (Keyboard.current[Key.S].isPressed) { direction -= transform.forward; }
+
+        direction = Vector3.ClampMagnitude(direction, 1f);
+
+        rb.linearVelocity = new Vector3(direction.x * speed, rb.linearVelocity.y, direction.z * speed);
+
+        if (Keyboard.current[Key.D].isPressed) { direction += transform.right; }
+
+        direction = Vector3.ClampMagnitude(direction, 1f);
+
+        rb.linearVelocity = new Vector3(direction.x * speed, rb.linearVelocity.y, direction.z * speed);
+
+        if (Keyboard.current[Key.A].isPressed) { direction -= transform.right; }
+
+        direction = Vector3.ClampMagnitude(direction, 1f);
+
+        rb.linearVelocity = new Vector3(direction.x * speed, rb.linearVelocity.y, direction.z * speed);
     }
 }
 
